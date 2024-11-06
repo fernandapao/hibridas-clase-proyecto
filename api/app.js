@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import { userRoutes, projectroutes, taskroutes } from './routes/index.js';
 import 'dotenv/config';
+import cors from "cors"
 
 mongoose.connect("mongodb://127.0.0.1:27017/kanban", {
     useNewUrlParser: true,
@@ -14,6 +15,13 @@ mongoose.connect("mongodb://127.0.0.1:27017/kanban", {
 
 const app = express();
 
+//para error de cors
+const options = {
+    origin: 'https://ejemplo.com',
+    
+}
+
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));

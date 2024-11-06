@@ -17,7 +17,9 @@ const Home = () => {
             }
         }
         try{
-        await axios.post('http://localhost:3000/projects')
+            await axios.post('http://localhost:3000/projects', newProject)
+            setName('')
+            setDescription('')
         }catch(err){
             console.log(err)
         }
