@@ -6,7 +6,7 @@ import cors from "cors"
 
 mongoose.connect("mongodb://127.0.0.1:27017/kanban", {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
   })
     .then(() => {console.log('Conectado a MongoDB...')
 })
@@ -16,11 +16,15 @@ mongoose.connect("mongodb://127.0.0.1:27017/kanban", {
 const app = express();
 
 //para error de cors
-const options = {
-    origin: 'https://ejemplo.com',
+// const options = {
+//     origin: 'https://ejemplo.com',
+//     methods: ['GET', 'POST'],
+//     AllowedHeathers: ['Content-Type', 'Authorization'],
+//     credentials: true
     
-}
+// }
 
+// app.use(cors(options));
 app.use(cors());
 
 app.use(express.json());

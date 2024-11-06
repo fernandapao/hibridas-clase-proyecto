@@ -6,6 +6,15 @@ const Home = () => {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
 
+    const fetchProjects = async () => {
+
+        try{
+            await axios.post('http://localhost:3000/projects', newProject)
+        }catch(err){
+            console.log(err)
+        }
+    }
+
     const handleAddProject = async (e) => {
         e.preventDefault();
         const newProject = {

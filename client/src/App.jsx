@@ -2,6 +2,7 @@ import {Route, Routes} from "react-router-dom"
 import './App.css'
 import {Home, TaskBoard, TaskView} from "./pages"
 
+
 function App() {
 
   return (
